@@ -1,0 +1,115 @@
+.section {
+  .table-responsive {
+    .table {
+      thead {
+        tr {
+          th {
+            padding: 18px 14px;
+            background-color: #afccf9;
+            color: #2323b7;
+            text-align: start;
+            border-color: unset;
+            border-style: none;
+            border-width: 0;
+            align-content: center;
+            &.clr-red {
+              color: red;
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          th {
+            padding: 32px 14px;
+            .calandy {
+              border: 1px solid;
+              border-radius: 10px;
+              max-width: 93px;
+              /* padding: 4px 8px; */
+              .year {
+                border-bottom: 1px solid;
+                p {
+                  margin-bottom: 0px;
+                  text-align: center;
+                  background-color: #a3a3a3;
+                  border-top-right-radius: 10px;
+                  border-top-left-radius: 10px;
+                }
+              }
+              .date {
+                h5 {
+                  text-align: center;
+                  margin-bottom: 0px;
+                }
+                p {
+                  margin-bottom: 6px;
+                  text-align: center;
+                }
+              }
+            }
+          }
+          td {
+            padding: 11px 11px;
+            align-content: center;
+          }
+        }
+      }
+
+      tbody,
+      td,
+      tfoot,
+      th,
+      thead,
+      tr {
+        border-color: unset;
+        border-style: none;
+        border-width: 0;
+      }
+    }
+  }
+}
+
+.card {
+  height: 60vh;
+  margin: 25px;
+  padding: 25px;
+  border: transparent;
+}
+
+.center img {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+  height: 162px;
+  width: 250px;
+  margin: 20px 0px;
+}
+
+h4,
+h6 {
+  font-weight: 400;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card-table {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: none;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+

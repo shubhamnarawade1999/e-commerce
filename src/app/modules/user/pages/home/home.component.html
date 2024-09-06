@@ -1,0 +1,91 @@
+<div class="swiper mySwiper mb-2">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="swiper-parent">
+        <img src="../assets/swiper1.webp" alt="">
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-parent">
+        <img src="../assets/swiper2.webp" alt="">
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-parent">
+        <img src="../assets/swiper3.webp" alt="">
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-parent">
+        <img src="../assets/swiper4.webp" alt="">
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="swiper-parent">
+        <img src="../assets/swiper4.webp" alt="">
+      </div>
+    </div>
+
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+
+
+<div class="section">
+  <div class="container">
+    <div class="category-parent">
+      <a data-bs-toggle="modal" href="#" class="bs-btn typ-productbtn gap-16">
+        User Industry<i class="bi bi-chevron-right"></i></a>
+      <a data-bs-toggle="modal" href="#" class="bs-btn typ-productbtn gap-16">
+        Product Category<i class="bi bi-chevron-right"></i></a>
+      <a data-bs-toggle="modal" href="#" class="bs-btn typ-productbtn gap-16">
+        Product Functions<i class="bi bi-chevron-right"></i></a>
+    </div>
+    <div class="row">
+      <div class="col-md-6 search-icon">
+        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchQuery" (input)="searchItems()">
+        <i class="bi bi-search"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-12" *ngFor="let data of displayedItems">
+        <div class="base-box">
+          <div class="item-card">
+            <div class="img-parent">
+              <img [src]="data.url" alt="">
+            </div>
+            <div class="text-parent">
+              <h2 class="heading">{{data.itemName}}</h2>
+            </div>
+            <div class="price-value">
+              <p class="para">Rs {{data.itemPrice}}/- <span></span></p>
+              <p class="para">{{data.itemBarcode}}</p>
+            </div>
+
+            <div class="item-cart">
+              <div class="button">
+                <button type="button" class="btn btn-success cart-button" (click)="addTocart(data)"><i class="bi bi-cart"></i> Add To
+                  Cart</button>
+              </div>
+              <div class="row plus-minusparent">
+                <button type="button" class="btn btn-success icon-centr col-md-2"><i class="bi bi-dash"></i><i
+                    class="bi bi-trash3" *ngIf="iconHide"></i> </button>
+                <input type="text" class="form-control mb-0 col-md-4 input-width" value="1">
+                <button type="button" class="btn btn-success icon-centr col-md-2"><i class="bi bi-plus-lg"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="loadMore-button" *ngIf="displayedItems.length < filteredItems.length">
+        <button type="button" class="btn btn-primary" (click)="loadMore()">Load More</button>
+      </div>
+      <div class="not-found" *ngIf="displayedItems.length==0">
+        <h2>No items found.</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+

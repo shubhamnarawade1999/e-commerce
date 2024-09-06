@@ -1,0 +1,13 @@
+.footer-parent {
+    background-color: #2f6ba9 !important;
+    .nav {
+        .nav-item {
+            .nav-link {
+                color: white !important;
+            }
+        }
+    }
+    .text-body-secondary{
+        color: white !important;    
+    }
+}

@@ -1,0 +1,43 @@
+.navbar {
+    padding: 17px 0px;
+    background-color: #2f6ba9 !important;
+    .navbar-brand {
+        color: white;
+        font-weight: 900;
+        font-size: 28px;
+    }
+    .navbar-toggler {
+    }
+    .collapse {
+        justify-content: space-between;
+        .navbar-nav {
+            gap: 10px;
+            &.navbar-navIcon{
+                gap: 30px;
+                .nav-item {
+                   a{
+                    font-size: 24px;
+                    color: white !important;
+                   }
+
+                }  
+            }
+            .nav-item {
+                .nav-link{
+                    color: white;
+                    font-weight: 600;
+                }
+            }
+        }
+
+       .form-inline{
+        position: relative;
+        .bi-search{
+            position: absolute;
+            right: 10px;
+            top: 8px;
+
+        }
+       }
+    }
+}
