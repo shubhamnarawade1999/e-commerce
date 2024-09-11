@@ -79,6 +79,10 @@
             color: #343232;
             margin-bottom: 16px;
             margin-top: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 248px;
           }
         }
         .price-value {

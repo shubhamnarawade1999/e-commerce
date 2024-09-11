@@ -113,3 +113,9 @@ h6 {
   border-radius: 0.25rem;
 }
 
+.itembtn{
+  gap: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}

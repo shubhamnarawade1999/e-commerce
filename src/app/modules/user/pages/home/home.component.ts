@@ -45,8 +45,6 @@ export class HomeComponent implements AfterViewInit {
       this.filteredItems = this.allItems; // Initially, filteredItems will be the same as allItems
       this.loadItems();
     });
-
-
   }
 
   loadItems(): void {
@@ -67,7 +65,6 @@ export class HomeComponent implements AfterViewInit {
   }
 
   addTocart(item: any) {
-    debugger
     this.dataService.addtoCart(item)
 
   }

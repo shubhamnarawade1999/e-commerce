@@ -13,7 +13,6 @@ export class DataService {
     return this.productList.asObservable();
   }
   addtoCart(product : any){
-    debugger
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
@@ -23,7 +22,8 @@ export class DataService {
   getTotalPrice() : number{
     let grandTotal = 0;
     this.cartItemList.map((a:any)=>{
-      grandTotal += a.total;
+      grandTotal += a.itemPrice;
+      debugger
     })
     return grandTotal;
   }

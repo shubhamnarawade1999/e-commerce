@@ -21,11 +21,17 @@
                     </td>
                 </tr>
 
-                
 
 
             </tbody>
         </table>
+
+        <div class="itembtn">
+            <button (click)="emptycart()" class="btn btn-danger">Empty Cart</button>
+            <button routerLink="/user/home" class="btn btn-primary">Shop More</button>
+            <button class="btn btn-success">Checkout</button>
+            <strong>Total : Rs: {{grandTotal}}</strong>
+        </div>
     </div>
 </div>
 
@@ -42,3 +48,38 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+<div class="section">
+    <div class="container">
+        <h2>Temperature Converter</h2>
+      
+        <div class="form-group">
+          <label for="celsius">Celsius:</label>
+          <input
+            type="number"
+            id="celsius"
+            [(ngModel)]="celsius"
+            (input)="convertToFahrenheit()"
+            class="form-control"
+            placeholder="Enter Celsius"
+          />
+        </div>
+      
+        <div class="form-group">
+          <label for="fahrenheit">Fahrenheit:</label>
+          <input
+            type="number"
+            id="fahrenheit"
+            [(ngModel)]="fahrenheit"
+            (input)="convertToCelsius()"
+            class="form-control"
+            placeholder="Enter Fahrenheit"
+          />
+        </div>
+      </div>
+      
+</div>

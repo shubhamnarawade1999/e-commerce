@@ -1,6 +1,17 @@
 .navbar {
     padding: 17px 0px;
     background-color: #2f6ba9 !important;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+       
+    /* Initially show the header */
+   
+    
     .navbar-brand {
         color: white;
         font-weight: 900;
@@ -12,32 +23,30 @@
         justify-content: space-between;
         .navbar-nav {
             gap: 10px;
-            &.navbar-navIcon{
+            &.navbar-navIcon {
                 gap: 30px;
                 .nav-item {
-                   a{
-                    font-size: 24px;
-                    color: white !important;
-                   }
-
-                }  
+                    a {
+                        font-size: 24px;
+                        color: white !important;
+                    }
+                }
             }
             .nav-item {
-                .nav-link{
+                .nav-link {
                     color: white;
                     font-weight: 600;
                 }
             }
         }
 
-       .form-inline{
-        position: relative;
-        .bi-search{
-            position: absolute;
-            right: 10px;
-            top: 8px;
-
+        .form-inline {
+            position: relative;
+            .bi-search {
+                position: absolute;
+                right: 10px;
+                top: 8px;
+            }
         }
-       }
     }
 }

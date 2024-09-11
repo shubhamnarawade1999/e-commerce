@@ -18,6 +18,7 @@ export class CartComponent {
     .subscribe(res=>{
       this.products = res;
       this.grandTotal = this.dataservice.getTotalPrice();
+      debugger
     })
   }
   removeItem(item: any){
@@ -25,5 +26,21 @@ export class CartComponent {
   }
   emptycart(){
     this.dataservice.removeAllCart();
+  }
+
+
+
+
+  celsius: number = 0;
+  fahrenheit: number = 32;
+
+  // Convert Celsius to Fahrenheit
+  convertToFahrenheit() {
+    this.fahrenheit = (this.celsius * 9) / 5 + 32;
+  }
+
+  // Convert Fahrenheit to Celsius
+  convertToCelsius() {
+    this.celsius = ((this.fahrenheit - 32) * 5) / 9;
   }
 }
