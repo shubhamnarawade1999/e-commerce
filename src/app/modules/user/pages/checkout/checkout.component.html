@@ -4,38 +4,266 @@
             <h2 class="heading"> Checkout</h2>
         </div>
 
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                <div class="address-box">
+                    <div class="delivey-mod">
+                        <h2 class="number">1</h2>
+                        <p class="para">Select a delivery mode</p>
+                    </div>
 
 
-        <div class="address-box">
-            <div class="delivey-mod">
-                <h2 class="number">1</h2>
-                <p class="para">Select a delivery mode</p>
-            </div>
+                    <div class="row">
+                        <div class="col-lg-5 col-12 managebootstrap-width" *ngIf="pickpoint">
+                            <div class="home-deliveryParent">
+                                <div class="item-wrapper">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                    </div>
+                                    <div class="img-text">
+                                        <img alt="Pick Up Point"
+                                            src="https://cdn.dmart.in/images/icons/pupModeIcon.png">
+                                        <p>Pick Up Point</p>
+                                    </div>
+                                    <div class="price">
+                                        <div class="free-deleviery">
+                                            <p>Free Delivery</p>
 
-            
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="home-deliveryParent">
-                        <div class="item-wrapper">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            </div>
-                            <div class="img-text">
-                                <img alt="Pick Up Point" src="https://cdn.dmart.in/images/icons/pupModeIcon.png">
-                                <p>Pick Up Point</p>
-                            </div>
-                            <div class="price">
-                               <div class="cross-price">
-                                <p>Flat ₹49.00</p>
-                                <span>₹0</span>
-                               </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-lg-5 col-12 managebootstrap-width">
+                            <div class="home-deliveryParent">
+                                <div class="item-wrapper">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                    </div>
+                                    <div class="img-text">
+                                        <img alt="Pick Up Point"
+                                            src="https://cdn.dmart.in/images/icons/pupModeIcon.png">
+                                        <p>Pick Up Point</p>
+                                    </div>
+                                    <div class="price">
+                                        <div class="cross-price">
+                                            <p>Flat ₹49.00</p>
+                                            <span>₹0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                
+                <div class="address-saved">
+                    <div class="row">
+                        <div class="col-md-12 col-12">
+                            <div class="inputadrees-parent">
+                                <h2>Saved addresses</h2>
+                                <a (click)="open(content)" *ngIf="hideNewAdd">
+                                    <h3>
+                                        <span>+</span>
+                                        Add New Address
+                                    </h3>
+                                </a>
+                            </div>
+
+                            <div class="address-dottedBox">
+                                <div class="text-wrapper" *ngIf="hideDotBox">
+                                    <p>You don't have any saved address. Try adding a new address</p>
+                                    <a (click)="open(content)">
+                                        <h3>
+                                            <span>+</span>
+                                            Add New Address
+                                        </h3>
+                                    </a>
+                                </div>
+                                <div class="text-wrapper-saved" *ngFor="let data of addresses">
+                                    <div class="radio-name-wrapper">
+                                        <div class="radio-btn">
+                                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault1" class="form-check-input">
+                                        </div>
+                                        <div class="name-address">
+                                            <p class="name">{{data.fullName}}</p>
+                                        <p>{{data.area}}, {{data.locality}}, {{data.city}}, {{data.pincode}}, {{data.state}}, {{data.contact}}</p>
+                                        </div>
+                                    </div>
+                                    <a (click)="open(content)">
+                                        <h3>
+                                            <span><i class="bi bi-pencil-fill"></i>  </span>&nbsp;
+                                             Edit
+                                        </h3>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                           
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="address-confirm">
+                    <div class="confirm-btn">
+                        <button type="button" class="btn btn-success" disabled="true">Confirm Address</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="payment-summery">
+                    <p>Price Summary</p>
+                    <span>
+                        5 products
+                    </span>
+
+                </div>
+                <div class="pay-box">
+                    <div class="you-pay">
+                        <p>
+                            You Pay
+                        </p>
+                        <h4>
+                            ₹ 1175
+                        </h4>
+
+                    </div>
+                    <div class="cart-total">
+                        <p>
+                            Cart Total
+                        </p>
+                        <h4>
+                            ₹ 1175
+                        </h4>
+                    </div>
+                    <div class="total-savings">
+                        <p>
+                            Your Savings
+                        </p>
+                        <h4>
+                            ₹ 820
+                        </h4>
+                    </div>
+
+                </div>
+
+                <div class="payment-btn">
+                    <button type="button" disabled="true" class="btn btn-success">Pay on Delivery (COD)</button>
+                </div>
+
+                <div class="or-btn">
+                    <p>OR</p>
+                </div>
+                <div class="pay-prepaid">
+                    <button type="button">Pay Now (Prepaid)</button>
+                </div>
+
             </div>
         </div>
 
+
+
     </div>
 </section>
+
+
+
+
+<!-- <ng-template #content let-modal>
+    <div class="section-model">
+        <div class="modal-header">
+            <h4 class="modal-title">Add Address</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Pincode</label>
+                    <input type="text" class="form-control" id="Pincode">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Area</label>
+                    <input type="text" class="form-control" id="Area">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Locality/ Street Name/ Apartment</label>
+                    <input type="text" class="form-control" id="Locality">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">City</label>
+                    <input type="text" class="form-control" id="City">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">State</label>
+                    <input type="text" class="form-control" id="State">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Contact Number for Order Delivery</label>
+                    <input type="text" class="form-control" id="Contact">
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success">Add Address</button>
+        </div>
+    </div>
+</ng-template> -->
+
+
+
+
+
+
+<ng-template #content let-modal>
+    <div class="section-model">
+        <div class="modal-header">
+            <h4 class="modal-title">Add Address</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="addressForm" >
+                <div class="form-group">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" formControlName="fullName">
+                </div>
+                <div class="form-group">
+                    <label for="pincode" class="form-label">Pincode</label>
+                    <input type="number" class="form-control" id="pincode" formControlName="pincode">
+                </div>
+                <div class="form-group">
+                    <label for="area" class="form-label">Area</label>
+                    <input type="text" class="form-control" id="area" formControlName="area">
+                </div>
+                <div class="form-group">
+                    <label for="locality" class="form-label">Locality/ Street Name/ Apartment</label>
+                    <input type="text" class="form-control" id="locality" formControlName="locality">
+                </div>
+                <div class="form-group">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" formControlName="city">
+                </div>
+                <div class="form-group">
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" class="form-control" id="state" formControlName="state">
+                </div>
+                <div class="form-group">
+                    <label for="contact" class="form-label">Contact Number for Order Delivery</label>
+                    <input type="number" class="form-control" id="contact" formControlName="contact">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="onSubmit()">Add Address</button>
+        </div>
+    </div>
+</ng-template>

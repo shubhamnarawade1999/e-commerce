@@ -1,5 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { DataService } from '../../data.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -9,7 +10,7 @@ export class CartComponent {
   cartData: any[] = [];
   public products : any = [];
   public grandTotal !: number;
-  constructor(private dataservice: DataService) {
+  constructor(private dataservice: DataService,private modalService: NgbModal) {
 
   }
 
@@ -29,18 +30,7 @@ export class CartComponent {
   }
 
 
-
-
-  celsius: number = 0;
-  fahrenheit: number = 32;
-
-  // Convert Celsius to Fahrenheit
-  convertToFahrenheit() {
-    this.fahrenheit = (this.celsius * 9) / 5 + 32;
-  }
-
-  // Convert Fahrenheit to Celsius
-  convertToCelsius() {
-    this.celsius = ((this.fahrenheit - 32) * 5) / 9;
+  open(content: any) {
+    this.modalService.open(content);
   }
 }
