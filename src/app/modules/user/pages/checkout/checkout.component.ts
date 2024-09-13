@@ -12,7 +12,6 @@ export class CheckoutComponent {
   addresses: any[] = [];
   pickpoint: boolean = false;
   hideDotBox: boolean = true;
-  hideNewAdd: boolean = false;
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder) {
     this.createForm();
   }
@@ -38,17 +37,13 @@ export class CheckoutComponent {
       this.modalService.dismissAll();
       if(this.addresses.length > 0){
         this.hideDotBox = false;
-        this.hideNewAdd = true
       }
       else{
         this.hideDotBox = true;
-        this.hideNewAdd = false;
       }
-
-      
     } else {
       console.log('Form is invalid');
-      console.log(this.addressForm.errors);  // Log any form-level errors
+      console.log(this.addressForm.errors);
       Object.keys(this.addressForm.controls).forEach(key => {
         const controlErrors = this.addressForm.get(key)?.errors;
         if (controlErrors != null) {
